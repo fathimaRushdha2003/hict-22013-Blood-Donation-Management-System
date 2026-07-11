@@ -4,9 +4,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blood Information</title>
+    <link rel="stylesheet" href="blood.css">
 </head>
 <body>
-    
+
+    <!-- Header -->
+    <header>
+        <div class="logo">❤️ BloodCare</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blood.html" class="active">Blood Info</a>
+             <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Blood Information</h1>
+        <p>Learn about blood groups, compatibility, and donation eligibility.</p>
+    </section>
+
+    <!-- Blood Groups -->
+    <section class="blood-groups">
+
+        <h2>Blood Group Compatibility</h2>
+
+        <table>
+            <tr>
+                <th>Blood Group</th>
+                <th>Donate To</th>
+                <th>Receive From</th>
+            </tr>
+
+            <tr>
+                <td>O-</td>
+                <td>All Blood Groups</td>
+                <td>O-</td>
+            </tr>
+
+            <tr>
+                <td>O+</td>
+                <td>O+, A+, B+, AB+</td>
+                <td>O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>A+</td>
+                <td>A+, AB+</td>
+                <td>A+, A-, O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>B+</td>
+                <td>B+, AB+</td>
+                <td>B+, B-, O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>AB+</td>
+                <td>AB+</td>
+                <td>All Blood Groups</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- Eligibility -->
+    <section class="eligibility">
+
+        <h2>Who Can Donate Blood?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Age</h3>
+                <p>18 - 60 Years</p>
+            </div>
+
+            <div class="card">
+                <h3>Weight</h3>
+                <p>Above 50 kg</p>
+            </div>
+
+            <div class="card">
+                <h3>Health</h3>
+                <p>Good General Health</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+
+        <h2>Benefits of Blood Donation</h2>
+
+        <ul>
+            <li>❤️ Helps save lives</li>
+            <li>🩺 Free mini health screening</li>
+            <li>💪 Encourages healthy blood production</li>
+            <li>🤝 Supports your community</li>
+        </ul>
+
+    </section>
+
+    <!-- Search Blood Group -->
+    <section class="search-section">
+
+        <h2>Search Blood Group</h2>
+
+        <input type="text" id="bloodGroup" placeholder="Enter Blood Group (e.g. O+)">
+
+        <button onclick="searchBlood()">Search</button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>❤️ Donate Blood, Save Lives ❤️</p>
+        <p>&copy; 2026 BloodCare</p>
+    </footer>
+
+    <script src="blood.js"></script>
+
 </body>
 </html>
+
+blood.css
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#d90429;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav a:hover,
+.active{
+    color:#ffd166;
+}
+
+.hero{
+    background:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    color:#d90429;
+    font-size:50px;
+}
+
+.hero p{
+    margin-top:15px;
+}
+
+.blood-groups,
+.eligibility,
+.benefits,
+.search-section{
+    padding:50px;
+}
+
+h2{
+    text-align:center;
+    color:#d90429;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,
+table td{
+    border:1px solid #ddd;
+    padding:15px;
+    text-align:center;
+}
+
+table th{
+    background:#d90429;
+    color:white;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:250px;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.benefits ul{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+.benefits li{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.search-section{
+    text-align:center;
+}
+
+.search-section input{
+    padding:12px;
+    width:250px;
+}
+
+.search-section button{
+    padding:12px 20px;
+    background:#d90429;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+blood.js
+
+function searchBlood(){
+
+    let group =
+    document.getElementById("bloodGroup")
+    .value
+    .toUpperCase();
+
+    if(group === ""){
+        alert("Please enter a blood group");
+        return;
+    }
+
+    alert("Blood Group Searched: " + group);
+}
+
+
