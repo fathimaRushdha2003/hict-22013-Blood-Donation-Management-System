@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Information</title>
+    <link rel="stylesheet" href="blood.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">❤️ BloodCare</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blood.html" class="active">Blood Info</a>
+             <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Blood Information</h1>
+        <p>Learn about blood groups, compatibility, and donation eligibility.</p>
+    </section>
+
+    <!-- Blood Groups -->
+    <section class="blood-groups">
+
+        <h2>Blood Group Compatibility</h2>
+
+        <table>
+            <tr>
+                <th>Blood Group</th>
+                <th>Donate To</th>
+                <th>Receive From</th>
+            </tr>
+
+            <tr>
+                <td>O-</td>
+                <td>All Blood Groups</td>
+                <td>O-</td>
+            </tr>
+
+            <tr>
+                <td>O+</td>
+                <td>O+, A+, B+, AB+</td>
+                <td>O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>A+</td>
+                <td>A+, AB+</td>
+                <td>A+, A-, O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>B+</td>
+                <td>B+, AB+</td>
+                <td>B+, B-, O+, O-</td>
+            </tr>
+
+            <tr>
+                <td>AB+</td>
+                <td>AB+</td>
+                <td>All Blood Groups</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- Eligibility -->
+    <section class="eligibility">
+
+        <h2>Who Can Donate Blood?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Age</h3>
+                <p>18 - 60 Years</p>
+            </div>
+
+            <div class="card">
+                <h3>Weight</h3>
+                <p>Above 50 kg</p>
+            </div>
+
+            <div class="card">
+                <h3>Health</h3>
+                <p>Good General Health</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+
+        <h2>Benefits of Blood Donation</h2>
+
+        <ul>
+            <li>❤️ Helps save lives</li>
+            <li>🩺 Free mini health screening</li>
+            <li>💪 Encourages healthy blood production</li>
+            <li>🤝 Supports your community</li>
+        </ul>
+
+    </section>
+
+    <!-- Search Blood Group -->
+    <section class="search-section">
+
+        <h2>Search Blood Group</h2>
+
+        <input type="text" id="bloodGroup" placeholder="Enter Blood Group (e.g. O+)">
+
+        <button onclick="searchBlood()">Search</button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>❤️ Donate Blood, Save Lives ❤️</p>
+        <p>&copy; 2026 BloodCare</p>
+    </footer>
+
+    <script src="blood.js"></script>
+
+</body>
+</html>
 
