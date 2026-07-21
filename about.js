@@ -1,26 +1,137 @@
-const counters = document.querySelectorAll(".counter");
+// ===============================
+// Blood Group Information
+// ===============================
 
-counters.forEach(counter => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    let count = 0;
+    const bloodData = {
 
-    const updateCounter = () => {
+        "O-": {
+            donate: "All Blood Groups",
+            receive: "O-",
+            info: "O- is called the Universal Donor."
+        },
 
-        const target = +counter.getAttribute("data-target");
+        "O+": {
+            donate: "O+, A+, B+, AB+",
+            receive: "O+, O-",
+            info: "O+ is the most common blood group."
+        },
 
-        if(count < target){
+        "A-": {
+            donate: "A-, A+, AB-, AB+",
+            receive: "A-, O-",
+            info: "A- is one of the rare blood groups."
+        },
 
-            count += Math.ceil(target / 100);
+        "A+": {
+            donate: "A+, AB+",
+            receive: "A+, A-, O+, O-",
+            info: "A+ is the second most common blood type."
+        },
 
-            counter.innerText = count;
+        "B-": {
+            donate: "B-, B+, AB-, AB+",
+            receive: "B-, O-",
+            info: "B- is a rare blood group."
+        },
 
-            setTimeout(updateCounter, 20);
+        "B+": {
+            donate: "B+, AB+",
+            receive: "B+, B-, O+, O-",
+            info: "B+ blood can help both B+ and AB+ patients."
+        },
+
+        "AB-": {
+            donate: "AB-, AB+",
+            receive: "AB-, A-, B-, O-",
+            info: "AB- is one of the rarest blood groups."
+        },
+
+        "AB+": {
+            donate: "AB+",
+            receive: "All Blood Groups",
+            info: "AB+ is called the Universal Recipient."
+        }
+
+    };
+
+    function searchBlood() {
+
+        const bloodInput = document.getElementById("bloodGroup");
+        const result = document.getElementById("result");
+
+        if (!bloodInput || !result) {
+            return;
+        }
+
+        let group = bloodInput.value.trim().toUpperCase();
+
+        if (group === "") {
+
+            result.innerHTML = "<h3>Please enter a blood group.</h3>";
+            return;
+
+        }
+
+        if (bloodData[group]) {
+
+            result.innerHTML = `
+                <h2>${group}</h2>
+                <hr><br>
+
+                <p><strong>Donate To:</strong><br>
+                ${bloodData[group].donate}</p>
+
+                <br>
+
+                <p><strong>Receive From:</strong><br>
+                ${bloodData[group].receive}</p>
+
+                <br>
+
+                <p><strong>Information:</strong><br>
+                ${bloodData[group].info}</p>
+            `;
 
         } else {
 
-            counter.innerText = target + "+";
-        }
-    };
+            result.innerHTML = `
+                <h2 style="color:red;">Invalid Blood Group!</h2>
 
-    updateCounter();
+                <p>
+                Please enter one of these blood groups:
+                <br><br>
+
+                O+, O-, A+, A-, B+, B-, AB+, AB-
+                </p>
+            `;
+
+        }
+
+    }
+
+    // Make search function available for onclick
+    window.searchBlood = searchBlood;
+
+    // Search when Enter key is pressed
+    const bloodInput = document.getElementById("bloodGroup");
+
+    if (bloodInput) {
+
+        bloodInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+                searchBlood();
+
+            }
+
+        });
+
+    }
+
+    console.log("BloodCare Website Loaded Successfully.");
+
 });
