@@ -150,3 +150,27 @@ footer{
     text-align:center;
     padding:20px;
 }
+/* Donation Information */
+
+.donation-info{
+    background:#fff;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.donation-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.donation-content h2{
+    color:#c62828;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.donation-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+}
