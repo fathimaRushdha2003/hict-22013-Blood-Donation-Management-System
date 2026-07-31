@@ -290,3 +290,10 @@ nav a{
 }
 
 }
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
